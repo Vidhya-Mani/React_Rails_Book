@@ -17,10 +17,21 @@ const Displaybook = () => {
     console.log(data);
 
     return (
-        <div><h3>List of existing Books:</h3>
+        <div>
                 <Link to="/bookadd">
-                  <button color="gold">Add new books</button>
+                  <p>Add new books</p>
                 </Link>
+                <Link to="/searchbook">
+                <p> Search for existing books</p>
+                </Link>
+                <Link to="/updatebook">
+                <p> Update existing book</p>
+                </Link>
+                <Link to="/deletebook">
+                <p> Delete existing book</p>
+                </Link>
+
+                <h3>List of existing Books:</h3>
            
                 {data.length ? data.map((ele) => (
                  

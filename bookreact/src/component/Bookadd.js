@@ -27,7 +27,6 @@ const Bookadd = () => {
             <input type="submit" onClick={addBook} />
             <Link to="/">
             <p>Go Back!</p>
-            <span> Update existing book</span>
             </Link>
             
         </div>
