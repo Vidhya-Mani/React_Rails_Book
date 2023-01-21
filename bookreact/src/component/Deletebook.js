@@ -15,16 +15,17 @@ const Deletebook = () => {
         console.log(book);
     
         async function deleteBook() {
-            let send = await axios.delete("http://127.0.0.1:3001/bookstock/13", book)
+            // let id = e.target.id;
+            let send = await axios.delete(`http://127.0.0.1:3001/bookstock/${book.id}`, book)
             console.log(send.book);
-            alert("Book 13 deleted successfully!")
+            alert(`Book ${book.id} deleted successfully!`)
         }
     return (
         <div>
-            <h3> Deleting book id:13</h3>
-            {/* <input type="text" placeholder='bookName' name='bookName' onChange={handleChange}/>
-            <input type="text" placeholder='bookAuthor' name='bookAuthor'  onChange={handleChange}/>
-            <input type="text" placeholder='bookQuantity' name='bookQuantity' onChange={handleChange}/> */}
+            <h3> Enter id of book to be Deleted:</h3>
+             <input type="text" placeholder='bookid' name='id' onChange={handleChange}/>
+            {/* <input type="text" placeholder='bookAuthor' name='bookAuthor'  onChange={handleChange}/> */}
+            {/* <input type="text" placeholder='bookQuantity' name='bookQuantity' onChange={handleChange}/>  */}
             <input type="submit" onClick={deleteBook} />
             <Link to="/">
             <p>Go Back!</p>

@@ -6,6 +6,7 @@ const Updatebook = () => {
         let [book, setBook] = useState({});
     
         const handleChange = (e) => {
+            // let no = e.target.id;
             setBook({
                 ...book,
                 [e.target.name] : e.target.value
@@ -18,13 +19,15 @@ const Updatebook = () => {
 
     
         async function updateBook() {
-            let send = await axios.put("http://127.0.0.1:3001/bookstock/15", book)
+            // let no = e.target.id;
+
+            let send = await axios.put(`http://127.0.0.1:3001/bookstock/${book.id}`, book)
             console.log(send.book);
-            alert("Book 15 updated successfully!")
+            alert(`Book ${book.id} updated successfully!`)
         }
     return (
         <div>
-            <h3> Updating book id:15</h3>
+            <h3> Enter book id and details to update:</h3>
             <input type="text" placeholder='bookid' name='id' onChange={handleChange}/>
             <input type="text" placeholder='bookName' name='bookName' onChange={handleChange}/>
             <input type="text" placeholder='bookAuthor' name='bookAuthor'  onChange={handleChange}/>

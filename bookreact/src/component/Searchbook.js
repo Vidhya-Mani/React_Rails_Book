@@ -37,7 +37,7 @@ const Searchbook = () => {
 
                 </div>
             ))
-                :<h2>No book found</h2>
+                :<h2>Enter book name or Author name</h2>
               
             }
               <Link to="/">
